@@ -20,6 +20,6 @@ let element = document.querySelector(`.${e.key}`)
 element.style.backgroundColor="black"
 element.style.color="white"
     element.childNodes[1].pause();
-    // element.childNodes[1].load();
+    
 
 })
