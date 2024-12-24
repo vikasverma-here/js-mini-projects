@@ -73,6 +73,7 @@ const colors = [
 ];
 
 
+
 function changingQuate() {
     const quaate = document.getElementById('quaate');
     const body = document.querySelector("body")
@@ -81,11 +82,10 @@ function changingQuate() {
     const index = Math.floor(Math.random() * codingQuotes.length);
     const colorIndex = Math.floor(Math.random() * colors.length);
     body.style.backgroundColor=colors[colorIndex]
-    // Update the image source
+   
     imgElement.src = imageUrls[urlIndex];
 
-    // Update the quote text
     quaate.textContent = codingQuotes[index];
-    console.log(index, urlIndex); // Log for debugging
+    console.log(index, urlIndex); 
 }
 setInterval(changingQuate, 5000);
