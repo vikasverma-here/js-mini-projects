@@ -199,7 +199,8 @@ console.log(length);
   }
    const selected_question= RandomQuestions()
 console.log(selected_question)
-
+const correct_answer = {};
+console.log("correct answer ",correct_answer)
 const form = document.querySelector('form')
 selected_question.forEach((problem,index)=>{
     const div = document.createElement('div');
@@ -221,7 +222,7 @@ selected_question.forEach((problem,index)=>{
         div.appendChild(newDiv)
     })
 
-
+    correct_answer[`q${index+1}`] = problem['answer'];
 
 form.appendChild(div)
 })
@@ -234,7 +235,24 @@ submitButton.innerText = "SUBMIT";
 btndiv.appendChild(submitButton);
 form.appendChild(btndiv)
 
-submitButton.addEventListener('click', function (event) {
+const newinput = document.querySelector('input')
+
+  form.addEventListener('submit',(event)=>{
+    
     event.preventDefault();
-    window.location.reload(); 
-  });
+    const data = new FormData(form);
+ console.log(Array.from(data.keys())
+ )
+ let result = 0;
+ for (let [key,value] of data){
+  if(value===correct_answer[key])
+    result++;
+  console.log(key,value)
+ }
+  
+ const out = document.createElement('out');
+    out.innerText = `${result} out of 5 is correct`;
+ form.appendChild(out)
+ 
+    form.reset();
+ })
