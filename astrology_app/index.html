@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astrology Summary</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-section">
+      <h2>Apka Apna Bhagya Dwaar: Apke Bare me Sab Batayega bus input Dalo</h2>
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+
+      <label for="surname">Surname</label>
+      <input type="text" id="surname" placeholder="Enter your surname">
+
+      <label for="age">Age</label>
+      <input type="number" id="age" placeholder="Enter your age" min="1" max="120">
+
+      <label for="birthDate">Date of Birth - Date</label>
+      <input type="number" id="birthDate" placeholder="Enter day (1-31)" min="1" max="31">
+
+      <label for="birthMonth">Date of Birth - Month</label>
+      <input type="number" id="birthMonth" placeholder="Enter month (1-12)" min="1" max="12">
+
+      <label for="birthYear">Date of Birth - Year</label>
+      <input type="number" id="birthYear" placeholder="Enter year" min="1900" max="2024">
+
+      <button id="button">Generate Summary</button>
+    </div>
+    <div class="summary-section">
+      <div class="summary-card" id="summaryCard">
+       
+        <p id="summaryText">summary comes here</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
